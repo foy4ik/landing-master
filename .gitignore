@@ -22,3 +22,4 @@ _site/
 *.log
 .DS_Store
 Thumbs.db
+dev/.cache/

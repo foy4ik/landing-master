@@ -1,0 +1,416 @@
+<!doctype html>
+<!--
+  ЛЕНДИНГ МАСТЕРА — главная страница.
+
+  Как править: ищите в файле комментарии «РЕДАКТИРОВАТЬ: ...» — рядом с ними лежит то,
+  что меняется под вас (тексты, цены, ссылки, фото). Всё остальное трогать не нужно.
+  Любую секцию (<section> с id) можно целиком удалить — страница и меню не сломаются.
+  Подробности — в README.md.
+-->
+<!-- РЕДАКТИРОВАТЬ: data-palette — цветовая палитра: "soft" (нежная), "strict" (строгая), "bright" (яркая) -->
+<html lang="ru" data-palette="soft">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- РЕДАКТИРОВАТЬ: title (до 60 символов) и description (до 160) — то, что видно в выдаче Яндекса и Google -->
+  <title>Мария Светлова — мастер маникюра в Москве | Запись онлайн</title>
+  <meta name="description" content="Маникюр, гель-лак, наращивание и дизайн ногтей в Москве. Стерильные инструменты, опыт 8 лет, запись онлайн за минуту.">
+  <meta name="theme-color" content="#fbf6f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1b1517" media="(prefers-color-scheme: dark)">
+
+  <!-- РЕДАКТИРОВАТЬ: https://example.ru/ замените на адрес вашего сайта (во всех строках ниже) -->
+  <link rel="canonical" href="https://example.ru/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Мария Светлова">
+  <meta property="og:title" content="Мария Светлова — мастер маникюра в Москве">
+  <meta property="og:description" content="Маникюр, гель-лак, наращивание и дизайн ногтей. Запись онлайн за минуту.">
+  <meta property="og:url" content="https://example.ru/">
+  <meta property="og:image" content="https://example.ru/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Иконки сайта. РЕДАКТИРОВАТЬ: замените файлы favicon.svg, favicon.ico и apple-touch-icon.png на свои -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preload" href="fonts/manrope-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high"
+        imagesrcset="img/hero-480.webp 480w, img/hero-800.webp 800w, img/hero-1100.webp 1100w"
+        imagesizes="(min-width: 900px) 460px, (min-width: 460px) 420px, calc(100vw - 40px)">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--
+    Разметка Schema.org для поисковиков. РЕДАКТИРОВАТЬ: name, telephone, address, url, image, часы работы.
+    Если вы работаете у клиентов или на дому без вывески, замените "BeautySalon" на "Person"
+    и удалите поля address / openingHours / priceRange.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Мария Светлова — мастер маникюра",
+    "description": "Маникюр, гель-лак, наращивание и дизайн ногтей в Москве.",
+    "url": "https://example.ru/",
+    "image": "https://example.ru/img/og-image.jpg",
+    "telephone": "+7-900-000-00-00",
+    "priceRange": "1500–4500 ₽",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Примерная, 10, офис 5",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "20:00"
+    }],
+    "sameAs": ["https://t.me/your_username"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container">
+      <!-- РЕДАКТИРОВАТЬ: ваше имя или название студии -->
+      <a class="brand" href="#top">Мария Светлова</a>
+      <!-- Меню заполняется само: в него попадают все секции с атрибутом data-nav -->
+      <nav class="site-nav" id="site-nav" aria-label="Основное меню"></nav>
+      <a class="btn btn--small header-cta" href="#contacts">Записаться</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== 1. ПЕРВЫЙ ЭКРАН ===================== -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <!-- РЕДАКТИРОВАТЬ: специализация и город -->
+          <span class="eyebrow">Мастер маникюра · Москва</span>
+          <!-- РЕДАКТИРОВАТЬ: ваше имя -->
+          <h1>Мария Светлова</h1>
+          <!-- РЕДАКТИРОВАТЬ: оффер в одну строку — что вы делаете и чем это полезно клиенту -->
+          <p class="lead">Аккуратный маникюр, который держится 3–4 недели. Стерильные инструменты и ровное покрытие без сколов.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contacts">Записаться</a>
+            <!-- РЕДАКТИРОВАТЬ: ссылка на ваш Telegram (t.me/ваш_логин) -->
+            <a class="btn btn--ghost" href="https://t.me/your_username" target="_blank" rel="noopener">Написать в Telegram</a>
+          </div>
+          <!-- РЕДАКТИРОВАТЬ: 2–4 коротких факта -->
+          <ul class="hero-facts">
+            <li>Опыт 8 лет</li>
+            <li>Стерилизация по стандарту</li>
+            <li>Метро в 5 минутах</li>
+          </ul>
+        </div>
+        <div class="hero-photo">
+          <!-- РЕДАКТИРОВАТЬ: ваше фото (вертикальное 4:5). Подготовьте три размера: 480, 800 и 1100 px по ширине -->
+          <img src="img/hero-800.webp"
+               srcset="img/hero-480.webp 480w, img/hero-800.webp 800w, img/hero-1100.webp 1100w"
+               sizes="(min-width: 900px) 460px, (min-width: 460px) 420px, calc(100vw - 40px)"
+               width="1100" height="1375" fetchpriority="high" decoding="async"
+               alt="Руки с аккуратным нюдовым маникюром и стразом">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. УСЛУГИ И ЦЕНЫ ===================== -->
+    <section class="section section--alt" id="services" data-nav="Услуги">
+      <div class="container">
+        <div class="section-head">
+          <h2>Услуги и цены</h2>
+          <!-- РЕДАКТИРОВАТЬ: короткое пояснение к разделу или удалите абзац -->
+          <p>Цена зависит от длины и сложности дизайна — точную сумму назову до начала работы.</p>
+        </div>
+        <div class="cards">
+          <!-- РЕДАКТИРОВАТЬ: карточка услуги. Чтобы добавить услугу — скопируйте весь блок <article>...</article>.
+               Название из <h3> автоматически попадает в список услуг в форме заявки. -->
+          <article class="card">
+            <h3>Классический маникюр</h3>
+            <p>Обработка кутикулы и придание формы. Уход за кожей рук, масло для кутикулы.</p>
+            <div class="card-meta"><span class="card-duration">60 мин</span><span class="card-price">1 500 ₽</span></div>
+            <a class="btn btn--ghost btn--small" href="#contacts" data-service="Классический маникюр">Записаться</a>
+          </article>
+          <article class="card">
+            <h3>Маникюр с гель-лаком</h3>
+            <p>Аппаратный маникюр, выравнивание ногтевой пластины, стойкое покрытие в один тон.</p>
+            <div class="card-meta"><span class="card-duration">2 часа</span><span class="card-price">2 500 ₽</span></div>
+            <a class="btn btn--ghost btn--small" href="#contacts" data-service="Маникюр с гель-лаком">Записаться</a>
+          </article>
+          <article class="card">
+            <h3>Наращивание</h3>
+            <p>Моделирование ногтей гелем на формах или типсах. Подберём длину и форму под ваши руки.</p>
+            <div class="card-meta"><span class="card-duration">3 часа</span><span class="card-price">3 800 ₽</span></div>
+            <a class="btn btn--ghost btn--small" href="#contacts" data-service="Наращивание">Записаться</a>
+          </article>
+          <article class="card">
+            <h3>Коррекция наращённых</h3>
+            <p>Подтяжка отросшей части, обновление покрытия и формы. Через 3–4 недели после наращивания.</p>
+            <div class="card-meta"><span class="card-duration">2,5 часа</span><span class="card-price">3 200 ₽</span></div>
+            <a class="btn btn--ghost btn--small" href="#contacts" data-service="Коррекция наращённых">Записаться</a>
+          </article>
+          <article class="card">
+            <h3>Дизайн ногтей</h3>
+            <p>Френч, градиент, втирка, слайдеры, ручная роспись. Стоимость указана за один ноготь.</p>
+            <div class="card-meta"><span class="card-duration">от 15 мин</span><span class="card-price">от 100 ₽</span></div>
+            <a class="btn btn--ghost btn--small" href="#contacts" data-service="Дизайн ногтей">Записаться</a>
+          </article>
+          <article class="card">
+            <h3>Снятие покрытия</h3>
+            <p>Бережное снятие гель-лака или геля без повреждения ногтевой пластины.</p>
+            <div class="card-meta"><span class="card-duration">30 мин</span><span class="card-price">500 ₽</span></div>
+            <a class="btn btn--ghost btn--small" href="#contacts" data-service="Снятие покрытия">Записаться</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. ОБО МНЕ ===================== -->
+    <section class="section" id="about" data-nav="Обо мне">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <!-- РЕДАКТИРОВАТЬ: фото рабочего места или вас за работой (5:4) -->
+          <img src="img/about-800.webp" srcset="img/about-480.webp 480w, img/about-800.webp 800w"
+               sizes="(min-width: 900px) 460px, calc(100vw - 40px)"
+               width="800" height="640" loading="lazy" decoding="async"
+               alt="Кисти и инструменты для дизайна ногтей на рабочем столе">
+        </div>
+        <div class="about-text">
+          <h2>Обо мне</h2>
+          <!-- РЕДАКТИРОВАТЬ: расскажите о себе 2–3 абзацами: как пришли в профессию, чем отличается ваш подход -->
+          <p>Меня зовут Мария, я делаю маникюр с 2018 года. Начинала в салоне, а три года назад открыла свой кабинет: хочется, чтобы каждый клиент получал не конвейер, а внимание и результат, которым можно гордиться.</p>
+          <p>Работаю только с проверенными материалами. Инструменты проходят дезинфекцию и стерилизацию в крафт-пакетах, вскрываю их при вас. Если ваши ногти ослаблены, сначала предложу восстановление, а не наращивание.</p>
+
+          <!-- РЕДАКТИРОВАТЬ: цифры о вашем опыте (можно оставить 2–4 штуки) -->
+          <div class="stats">
+            <div class="stat"><b>8 лет</b><span>в профессии</span></div>
+            <div class="stat"><b>3 200+</b><span>довольных клиентов</span></div>
+            <div class="stat"><b>4,9</b><span>средняя оценка</span></div>
+            <div class="stat"><b>12</b><span>пройденных курсов</span></div>
+          </div>
+
+          <div class="certs">
+            <h3>Сертификаты</h3>
+            <!-- РЕДАКТИРОВАТЬ: сертификаты. Миниатюра в src, большое изображение в href. Блок можно удалить целиком -->
+            <div class="cert-list">
+              <a href="img/certs/cert-1.webp" data-lightbox="certs" data-caption="Сертификат: аппаратный маникюр, 2018">
+                <img src="img/certs/cert-1-thumb.webp" width="400" height="280" loading="lazy" decoding="async" alt="Сертификат об окончании курса аппаратного маникюра">
+              </a>
+              <a href="img/certs/cert-2.webp" data-lightbox="certs" data-caption="Сертификат: наращивание гелем, 2020">
+                <img src="img/certs/cert-2-thumb.webp" width="400" height="280" loading="lazy" decoding="async" alt="Сертификат о прохождении курса по наращиванию ногтей">
+              </a>
+              <a href="img/certs/cert-3.webp" data-lightbox="certs" data-caption="Сертификат: дизайн и роспись, 2023">
+                <img src="img/certs/cert-3-thumb.webp" width="400" height="280" loading="lazy" decoding="async" alt="Сертификат о прохождении курса по дизайну ногтей">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. РАБОТЫ ===================== -->
+    <section class="section section--alt" id="works" data-nav="Работы">
+      <div class="container">
+        <div class="section-head">
+          <h2>Мои работы</h2>
+          <p>Нажмите на фото, чтобы рассмотреть поближе. На телефоне можно листать свайпом.</p>
+        </div>
+        <div class="gallery">
+          <!-- РЕДАКТИРОВАТЬ: фото работ. Миниатюра (квадрат 640×640) в src, большое фото в href.
+               Чтобы добавить фото — скопируйте строку <a>...</a>. Описание для просмотра — в data-caption -->
+          <a href="img/works/w1.webp" data-lightbox="works" data-caption="Пурпурный металлик"><img src="img/works/w1-thumb.webp" width="640" height="640" loading="lazy" decoding="async" alt="Пурпурный маникюр с мерцанием"></a>
+          <a href="img/works/w2.webp" data-lightbox="works" data-caption="Коралловый гель-лак"><img src="img/works/w2-thumb.webp" width="640" height="640" loading="lazy" decoding="async" alt="Маникюр в коралловом цвете"></a>
+          <a href="img/works/w3.webp" data-lightbox="works" data-caption="Френч со стразом"><img src="img/works/w3-thumb.webp" width="640" height="640" loading="lazy" decoding="async" alt="Французский маникюр со стразом"></a>
+          <a href="img/works/w4.webp" data-lightbox="works" data-caption="Бирюзовое покрытие"><img src="img/works/w4-thumb.webp" width="640" height="640" loading="lazy" decoding="async" alt="Маникюр в бирюзовом цвете"></a>
+          <a href="img/works/w5.webp" data-lightbox="works" data-caption="Классический красный"><img src="img/works/w5-thumb.webp" width="640" height="640" loading="lazy" decoding="async" alt="Маникюр с красным покрытием"></a>
+          <a href="img/works/w6.webp" data-lightbox="works" data-caption="Полосы с блёстками"><img src="img/works/w6-thumb.webp" width="640" height="640" loading="lazy" decoding="async" alt="Дизайн ногтей с золотыми полосами"></a>
+          <a href="img/works/w7.webp" data-lightbox="works" data-caption="Цветочный принт"><img src="img/works/w7-thumb.webp" width="640" height="640" loading="lazy" decoding="async" alt="Дизайн ногтей с цветами на голубом фоне"></a>
+          <a href="img/works/w8.webp" data-lightbox="works" data-caption="Стемпинг на розовом"><img src="img/works/w8-thumb.webp" width="640" height="640" loading="lazy" decoding="async" alt="Розовый маникюр со стемпингом"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. ОТЗЫВЫ ===================== -->
+    <section class="section" id="reviews" data-nav="Отзывы">
+      <div class="container">
+        <div class="section-head">
+          <h2>Отзывы клиентов</h2>
+        </div>
+        <div class="reviews">
+          <!-- РЕДАКТИРОВАТЬ: отзывы. Каждый отзыв — блок <figure>. Лучше брать реальные, с разрешения авторов -->
+          <figure class="review">
+            <div class="stars" aria-label="5 из 5">★★★★★</div>
+            <blockquote>Хожу к Марии уже два года. Покрытие держится больше трёх недель, ногти не слоятся. И всегда чисто и спокойно.</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">А</span><span><b>Анастасия К.</b>гель-лак</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="stars" aria-label="5 из 5">★★★★★</div>
+            <blockquote>Пришла с обломанными ногтями перед отпуском. Мария предложила форму, которая мне подходит, и всё получилось красиво и естественно.</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">Е</span><span><b>Елена В.</b>наращивание</span></figcaption>
+          </figure>
+          <!-- Отзыв в виде «скриншота переписки»: замените тексты или вставьте настоящий скриншот
+               вместо блока .chat: <img src="img/reviews/1.webp" alt="Отзыв клиента в мессенджере" width="..." height="..." loading="lazy"> -->
+          <figure class="review">
+            <div class="chat" role="img" aria-label="Переписка: клиентка благодарит за маникюр">
+              <p class="in">Мария, спасибо! Уже 4 недели, а маникюр как новый 😍</p>
+              <p class="out">Очень рада! Жду на коррекцию 💅</p>
+              <p class="in">Запишусь на пятницу!</p>
+            </div>
+            <figcaption><span class="avatar" aria-hidden="true">О</span><span><b>Ольга Т.</b>из переписки в Telegram</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. КАК ПРОХОДИТ РАБОТА ===================== -->
+    <section class="section section--alt" id="process" data-nav="Как проходит">
+      <div class="container">
+        <div class="section-head">
+          <h2>Как проходит работа</h2>
+        </div>
+        <ol class="steps">
+          <!-- РЕДАКТИРОВАТЬ: 3–4 шага. Цифры подставляются сами -->
+          <li class="step"><h3>Заявка</h3><p>Оставьте заявку на сайте или напишите в мессенджер — отвечу в течение часа.</p></li>
+          <li class="step"><h3>Подтверждение</h3><p>Согласуем дату и время, расскажу, как подготовиться и что взять с собой.</p></li>
+          <li class="step"><h3>Встреча</h3><p>Обсудим форму, длину и цвет, проведу процедуру в спокойной обстановке.</p></li>
+          <li class="step"><h3>Результат и уход</h3><p>Дам рекомендации по уходу и запишу на коррекцию заранее, чтобы вы не потеряли удобное время.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== 7. FAQ ===================== -->
+    <section class="section" id="faq" data-nav="Вопросы">
+      <div class="container">
+        <div class="section-head">
+          <h2>Частые вопросы</h2>
+        </div>
+        <div class="faq">
+          <!-- РЕДАКТИРОВАТЬ: вопросы и ответы. Чтобы добавить — скопируйте блок <details>...</details> -->
+          <details>
+            <summary>Как подготовиться к визиту?</summary>
+            <p>Ничего особенного: не нужно отращивать или стричь ногти заранее. Если на ногтях есть чужое покрытие — ничего страшного, сниму его на месте.</p>
+          </details>
+          <details>
+            <summary>Сколько держится покрытие?</summary>
+            <p>Гель-лак обычно держится 3–4 недели, наращивание — до 4–5 недель до коррекции. Срок зависит от скорости роста ногтей и бытовой нагрузки.</p>
+          </details>
+          <details>
+            <summary>Как вы обрабатываете инструменты?</summary>
+            <p>Каждый набор проходит дезинфекцию, предстерилизационную очистку и стерилизацию в сухожаровом шкафу. Крафт-пакет вскрываю при вас.</p>
+          </details>
+          <details>
+            <summary>Можно ли прийти с ребёнком?</summary>
+            <p>Да, если ребёнок спокойно посидит рядом. Маленьким детям нужно сопровождение взрослого, который будет с ними, пока я занята.</p>
+          </details>
+          <details>
+            <summary>Как перенести или отменить запись?</summary>
+            <p>Напишите или позвоните не позднее чем за сутки — найдём другое время. Это нужно, чтобы я смогла предложить освободившееся окно другим клиентам.</p>
+          </details>
+          <details>
+            <summary>Чем можно оплатить?</summary>
+            <p>Наличными, переводом по номеру телефона или картой через терминал.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 8. КОНТАКТЫ И ФОРМА ===================== -->
+    <section class="section section--alt" id="contacts" data-nav="Контакты">
+      <div class="container">
+        <div class="section-head">
+          <h2>Контакты и запись</h2>
+          <p>Оставьте заявку — я перезвоню или напишу и подберу удобное время.</p>
+        </div>
+        <div class="contacts-grid">
+          <div>
+            <!-- РЕДАКТИРОВАТЬ: адрес, часы работы, телефон и ссылки на мессенджеры -->
+            <dl class="contact-list">
+              <div><dt>Адрес</dt><dd>Москва, ул. Примерная, 10, офис 5</dd></div>
+              <div><dt>Часы работы</dt><dd>Пн–Сб, 10:00–20:00</dd></div>
+              <div><dt>Телефон</dt><dd><a href="tel:+79000000000">+7 (900) 000-00-00</a></dd></div>
+            </dl>
+            <div class="messengers">
+              <a class="btn btn--small" href="https://t.me/your_username" target="_blank" rel="noopener">Telegram</a>
+              <a class="btn btn--small btn--ghost" href="https://wa.me/79000000000" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+            <!-- РЕДАКТИРОВАТЬ: карта. Откройте https://yandex.ru/map-constructor/ , отметьте свой адрес,
+                 нажмите «Получить код карты» → «Интерактивная карта», скопируйте из кода адрес из src="..."
+                 и вставьте его в data-src ниже. Карта подгружается, когда посетитель докрутит до неё. -->
+            <div class="map" data-title="Карта: как нас найти"
+                 data-src="https://yandex.ru/map-widget/v1/?ll=37.617698%2C55.755864&amp;z=16&amp;pt=37.617698%2C55.755864%2Cpm2rdm">
+              <div class="map-placeholder">Карта загружается…</div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h3>Записаться</h3>
+            <p>Поля со звёздочкой обязательны.</p>
+            <form id="lead-form" novalidate>
+              <div class="field">
+                <label for="f-name">Имя *</label>
+                <input type="text" id="f-name" name="name" autocomplete="name" maxlength="80" required aria-describedby="f-name-err">
+                <div class="field-error" id="f-name-err" role="alert"></div>
+              </div>
+              <div class="field">
+                <label for="f-phone">Телефон *</label>
+                <input type="tel" id="f-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" maxlength="18" required aria-describedby="f-phone-err">
+                <div class="field-error" id="f-phone-err" role="alert"></div>
+              </div>
+              <div class="field">
+                <label for="f-service">Услуга</label>
+                <select id="f-service" name="service">
+                  <!-- Остальные варианты добавляются сами из карточек раздела «Услуги» -->
+                  <option value="Нужна консультация">Нужна консультация</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-comment">Комментарий</label>
+                <textarea id="f-comment" name="comment" rows="3" maxlength="1000" placeholder="Удобные дни и время, пожелания"></textarea>
+              </div>
+              <!-- Поле-ловушка для спам-роботов: человек его не видит и не заполняет. Не удалять -->
+              <div class="hp" aria-hidden="true">
+                <label>Ваш сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+              </div>
+              <div class="field">
+                <label class="consent" for="f-consent">
+                  <input type="checkbox" id="f-consent" name="consent" required aria-describedby="f-consent-err">
+                  <span>Согласен на обработку персональных данных и принимаю <a href="policy.html" target="_blank" rel="noopener">политику конфиденциальности</a></span>
+                </label>
+                <div class="field-error" id="f-consent-err" role="alert"></div>
+              </div>
+              <button class="btn form-submit" type="submit">Отправить заявку</button>
+              <div class="form-status" role="status" aria-live="polite"></div>
+              <!-- РЕДАКТИРОВАТЬ: что показать при ошибке отправки — запасные способы связаться -->
+              <div class="form-fallback" hidden>
+                Напишите напрямую: <a href="https://t.me/your_username" target="_blank" rel="noopener">Telegram</a>
+                или позвоните <a href="tel:+79000000000">+7 (900) 000-00-00</a>.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <!-- РЕДАКТИРОВАТЬ: имя / название ИП, ИНН (если нужен) -->
+      <span>© 2026 Мария Светлова</span>
+      <a href="policy.html">Политика конфиденциальности</a>
+    </div>
+  </footer>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

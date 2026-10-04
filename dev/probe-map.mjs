@@ -1,0 +1,13 @@
+import { chromium } from 'playwright';
+import { serve } from './serve.mjs';
+const server = await serve('..', 8102);
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1280, height: 800 } });
+p.on('console', m => console.log('console', m.type(), m.text()));
+p.on('pageerror', e => console.log('pageerror', e.message));
+p.on('requestfailed', r => console.log('reqfail', r.url().slice(0, 100), r.failure()?.errorText));
+await p.goto('http://127.0.0.1:8102/index.html');
+await p.locator('#contacts').scrollIntoViewIfNeeded();
+await p.waitForTimeout(4000);
+console.log(await p.evaluate(() => document.querySelector('.map').innerHTML.slice(0, 300)));
+await p.locator('.map').screenshot({ path: 'screenshots/map.png' });
+await b.close(); server.close();
