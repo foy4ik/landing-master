@@ -1,6 +1,6 @@
 // send.php tested in Docker (php:<version>-cli built-in server) against the fake Telegram API.
 // Docker is needed only for this local check; buyers do not need it.
-import { after, before, describe } from 'node:test';
+import { after, before, describe, it } from 'node:test';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';

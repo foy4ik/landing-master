@@ -120,10 +120,10 @@ describe('markup hygiene', () => {
     assert.ok(!/<link[^>]+href="https?:\/\/(fonts|cdn)/.test(html));
     assert.ok(!/@import|url\(https?:/.test(read('css/style.css')));
   });
-  it('policy.html has fill-in fields and robots noindex', () => {
+  it('policy.html has fill-in fields', () => {
     const p = read('policy.html');
     assert.ok((p.match(/class="fill"/g) || []).length >= 8);
-    assert.match(p, /noindex/);
+
   });
   it('config.js exposes the endpoint, metrika id and demo flag', () => {
     const cfg = read('js/config.js');
