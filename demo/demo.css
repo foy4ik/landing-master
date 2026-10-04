@@ -1,0 +1,35 @@
+/* Только для демо-версии: панель выбора палитры и предпросмотр сообщения Telegram. */
+body.has-demo-bar { padding-bottom: 76px; }
+.demo-bar {
+  position: fixed; left: 50%; bottom: 12px; z-index: 60; transform: translateX(-50%);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px;
+  width: max-content; max-width: calc(100vw - 24px); padding: 8px 12px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent); color: var(--text);
+  border: 1px solid var(--border); border-radius: 999px;
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, .35); font-size: .85rem;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.demo-bar__label { font-weight: 600; padding-inline: 6px; }
+.demo-bar button {
+  min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--accent);
+  background: transparent; color: var(--accent); font: 600 .85rem var(--font-body); cursor: pointer;
+}
+.demo-bar button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+@media (max-width: 520px) {
+  .demo-bar { border-radius: 18px; bottom: 8px; padding: 8px; }
+  .demo-bar__label { width: 100%; text-align: center; }
+  body.has-demo-bar { padding-bottom: 104px; }
+}
+
+.demo-tg { border: 0; padding: 0; border-radius: 20px; width: min(94vw, 420px); background: var(--surface); color: var(--text); }
+.demo-tg::backdrop { background: rgba(10, 8, 10, .6); }
+.demo-tg__note { padding: 20px 20px 12px; font-size: .95rem; }
+.demo-tg__phone { margin: 0 16px; border-radius: 16px; overflow: hidden; background: #0e1621; color: #fff; }
+.demo-tg__head { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #17212b; }
+.demo-tg__head small { display: block; color: #8b9aa8; font-size: .75rem; }
+.demo-tg__ava { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: #2b9bd7; font-weight: 700; }
+.demo-tg__chat { padding: 16px 12px 20px; }
+.demo-tg__bubble { background: #182533; border-radius: 14px 14px 14px 4px; padding: 10px 14px; font-size: .92rem; line-height: 1.5; overflow-wrap: anywhere; }
+.demo-tg__bubble p { margin: 0 0 .35em; }
+.demo-tg__bubble small { display: block; text-align: right; color: #8b9aa8; margin-top: 6px; }
+.demo-tg__close { margin: 16px; width: calc(100% - 32px); }
