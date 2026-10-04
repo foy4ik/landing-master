@@ -387,14 +387,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 .lb-stage { position: absolute; inset: 0; display: grid; place-items: center; padding: 56px 12px 64px; touch-action: pan-y; }
 .lb-stage img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; user-select: none; -webkit-user-drag: none; }
 .lb-btn {
-  position: absolute; width: 48px; height: 48px; border: 0; border-radius: 50%; cursor: pointer;
+  z-index: 2; position: absolute; width: 48px; height: 48px; border: 0; border-radius: 50%; cursor: pointer;
   background: rgba(255,255,255,.14); color: #fff; font-size: 1.5rem; display: grid; place-items: center;
 }
 .lb-btn:hover { background: rgba(255,255,255,.26); }
 .lb-close { top: 10px; right: 10px; }
 .lb-prev { left: 8px; top: 50%; translate: 0 -50%; }
 .lb-next { right: 8px; top: 50%; translate: 0 -50%; }
-.lb-info { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-size: .92rem; padding: 0 70px; color: #ddd; }
+.lb-info { pointer-events: none; position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-size: .92rem; padding: 0 70px; color: #ddd; }
 @media (max-width: 600px) { .lb-prev, .lb-next { top: auto; bottom: 8px; translate: none; } }
 
 /* ---------- Страница политики ---------- */

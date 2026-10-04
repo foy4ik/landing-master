@@ -3,7 +3,7 @@
    ========================================================================== */
 window.SITE_CONFIG = {
   // РЕДАКТИРОВАТЬ: адрес обработчика формы.
-  //   Хостинг с PHP:            "send.php"  (файл handlers/send.php положить рядом с index.html)
+  //   Хостинг с PHP:            "send.php"  (файлы send.php и config.php лежат рядом с index.html)
   //   Cloudflare Worker:        "https://landing-form.ВАШ-АККАУНТ.workers.dev"
   formEndpoint: "send.php",
 
