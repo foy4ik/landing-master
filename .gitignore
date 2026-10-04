@@ -2,14 +2,12 @@
 .env
 .env.*
 !.env.example
-config.php
-!handlers/config.example.php
+/config.php
 .dev.vars
 *.sqlite
 *.sqlite3
 *.db
 *.session
-handlers/data/
 
 # tooling and build output
 node_modules/

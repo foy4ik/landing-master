@@ -292,8 +292,8 @@
         service: select.value,
         comment: form.elements.comment.value.trim(),
         consent: true,
-        website: form.elements.website.value, // поле-ловушка: у людей всегда пустое
-        t: shownAt                             // когда форма появилась на странице
+        website: form.elements.website.value,   // поле-ловушка: у людей всегда пустое
+        elapsed: Date.now() - shownAt           // сколько миллисекунд форма была на странице
       };
       Promise.resolve(send(payload)).then(function (r) {
         if (r && r.data && r.data.ok) {

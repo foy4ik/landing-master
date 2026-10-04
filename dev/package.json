@@ -11,5 +11,11 @@
     "playwright": "^1.63.0",
     "sharp": "^0.35.5",
     "wrangler": "^4.147.0"
+  },
+  "scripts": {
+    "test": "node --test test/worker.test.mjs test/wrangler.test.mjs test/php.test.mjs test/e2e.test.mjs test/static.test.mjs",
+    "test:fast": "node --test test/worker.test.mjs test/static.test.mjs test/e2e.test.mjs",
+    "test:php": "node --test test/php.test.mjs",
+    "test:worker": "node --test test/worker.test.mjs test/wrangler.test.mjs"
   }
 }
