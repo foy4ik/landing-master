@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /send.php
-
-# РЕДАКТИРОВАТЬ: example.ru замените на адрес вашего сайта
-Sitemap: https://example.ru/sitemap.xml

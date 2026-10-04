@@ -21,3 +21,4 @@ _site/
 .DS_Store
 Thumbs.db
 dev/.cache/
+dev/.tmp/
